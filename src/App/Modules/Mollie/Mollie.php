@@ -14,7 +14,7 @@
         } else {
             include(__DIR__ . '/Components/PaymentForm.php');
         }
-
+        include(__DIR__ . '/Components/MollieInfo.php');
         ?>
     </div>
 
