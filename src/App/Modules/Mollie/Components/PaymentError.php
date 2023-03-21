@@ -1,0 +1,1 @@
+<?php echo $app->mollie->apiErrror ?  '<p class="error-message">'.$app->mollie->apiErrror .'</p>' : null ?>

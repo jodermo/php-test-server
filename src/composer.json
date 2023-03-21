@@ -1,0 +1,43 @@
+{
+    "name": "jodermo/php-test-server",
+    "description": "Simple PHP Test Server with NGINX and Composer as Docker Container",
+    "version": "v0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Moritz Petzka",
+            "email": "info@petzka.com"
+        }
+    ],
+    "require": {
+        "mollie/mollie-api-php": "^2.0",
+        "phpmailer/phpmailer": "^6.8",
+        "defuse/php-encryption": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "mollie\\" : ""
+        }
+    },
+    "type": "project",
+    "autoload": {},
+    "extra": {
+        "copyright": "(c) by Moritz Petzka",
+        "label": {
+            "de-DE": "PHP Test Bundle",
+            "en-GB": "PHP Test Bundle"
+        },
+        "description": {
+            "de-DE": "© 2021 by Moritz Petzka - info@petzka.com",
+            "en-GB": "© 2021 by Moritz Petzka - info@petzka.com"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://petzka.com",
+            "en-GB": "https://petzka.com"
+        },
+        "supportLink": {
+            "de-DE": "https://petzka.com",
+            "en-GB": "https://petzka.com"
+        }
+    }
+}
