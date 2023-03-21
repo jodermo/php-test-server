@@ -9,10 +9,7 @@
 
 #### Or drop it to your Apache live server
 
-Simple copy all Content from [/src/](./src/) to your server Apache server.
-*(Note: The project has to be started/build with docker before vendor data is available)*
-
-##### Example URL: [https://php-test.dont-use.com/](https://php-test.dont-use.com/)
+##### Website Example: [https://php-test.dont-use.com/](https://php-test.dont-use.com/)
 
 
 ##### Includes example code for HTML, CSS and JavaScript
@@ -38,7 +35,7 @@ Simple copy all Content from [/src/](./src/) to your server Apache server.
 
 <br>
 
-## First edit the environement JSON file `src/environment.json`
+## First edit the environment file `src/environment.json`
 
 Example Code:
 ```
@@ -70,3 +67,7 @@ docker-compose up --build
 
 
 
+# Use it live
+
+##### Simple copy all Content from [/src/](./src/) to your server Apache server.
+*(Note: The project has to be started/build with docker before vendor data is available)*
