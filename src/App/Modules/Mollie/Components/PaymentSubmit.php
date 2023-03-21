@@ -1,4 +1,4 @@
-<h2>Pament Created:</h2>
+<h2>Payment Created:</h2>
 <?php $app->mollie->paymentUrl ? include(__DIR__ . '/PaymentLink.php') : null ?>
 <?php !$app->mollie->paymentUrl ? include(__DIR__ . '/PaymentError.php') : null ?>
 <div class="php-output">

@@ -1,11 +1,29 @@
+<?php
+
+require_once('../../../App.php');
+
+use App\Modukes\Chat\Components\ChatMessage;
+use App\App;
+
+
+$appConfigJSON = file_get_contents("../../../../environment.json");
+$appConfig = json_decode($appConfigJSON, true);
+
+$app = new App($appConfig);
+$app->chat->start();
+
+$messageUrl = $app->chat->chatURL() . '&get_messages=1';
+
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="../../../css/styles.css?v=<?php echo $randomNumber; ?>">
-    <link href="../../../assets/favicon.ico" rel="icon" type="image/x-icon" />
-    <script src="../../../js/app.js?v=<?php echo $randomNumber; ?>"></script>
+    <link rel="stylesheet" href="../../../../css/styles.css?v=<?php echo $randomNumber; ?>">
+    <link href="../../../../assets/favicon.ico" rel="icon" type="image/x-icon" />
+    <script src="../../../../js/app.js?v=<?php echo $randomNumber; ?>"></script>
     <script>
         var messages = [];
         var checked = false;
@@ -39,21 +57,6 @@
 
             <div class="chat-messages">
                 <?php
-
-                require_once('../../../App.php');
-
-                use App\Modukes\Chat\Components\ChatMessage;
-                use App\App;
-
-
-                $appConfigJSON = file_get_contents("../../../../environment.json");
-                $appConfig = json_decode($appConfigJSON, true);
-
-                $app = new App($appConfig);
-                $app->chat->start();
-
-                $messageUrl = $app->chat->chatURL() . '&get_messages=1';
-
 
                 $messages = $app->chat->chatMassages(true);
 
