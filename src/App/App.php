@@ -119,25 +119,37 @@ class App
     public function arrayToHtmlTable($arrayData, string $title = null)
     {
         $html = $title != null ? '<h3>' .$title. '</h3>'  : '' ;
-        if (is_array($arrayData)) {
+        if (is_array($arrayData) || is_object($arrayData)) {
             // start table
             $html .='<table><tbody>';
+            if(is_object($arrayData) || count($arrayData)){
             // data rows
             foreach ($arrayData as $key => $value) {
-                if (is_array($value)) {
+                if (is_array($value) || is_object($value)) {
                     $html .= '<tr>';
                     $html .= '<th>' . htmlspecialchars($key) . '</th><td>' . $this->arrayToHtmlTable($value) . '</td>';
                     $html .= '</tr>';
                 } else {
+                    if(is_bool($value)){
+                        $value = $value ? 'true' : 'false';
+                    }
+                    if(! $value){
+                        $value = 'none';
+                    }
                     $html .= '<tr>';
                     $html .= '<th>' . htmlspecialchars($key) . '</th><td>' . htmlspecialchars($value) . '</td>';
                     $html .= '</tr>';
                 }
             }
+            }else{
+                $html .= '<tr>';
+                $html .= '<th>No Data</th>';
+                $html .= '</tr>';
+            }
             // finish table and return it
             $html .= '</tbody></table>';
         } else {
-            $dataString = $arrayData ? var_dump($arrayData) : 'No Data';
+            $dataString = $arrayData ? print_r($arrayData, true) : 'No Data';
             $html .= $dataString;
         }
         return $html;

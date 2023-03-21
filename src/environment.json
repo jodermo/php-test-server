@@ -6,5 +6,5 @@
     "keywords":"PHP, test",
     "author":"Moritz Petzka",
     "redirectUrl":"https://php-test.dont-use.com/?sucess=1",
-    "webhookUrl":"https://php-test.dont-use.com/"
+    "webhookUrl":"https://php-test.dont-use.com/?webhook=1"
 }

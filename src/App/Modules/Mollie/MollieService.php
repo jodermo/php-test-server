@@ -98,7 +98,7 @@ class MollieService
         ['apiKey', 'transaction_api_key'],
         ['accessKey', 'transaction_access_key'],
         ['accountId', 'transaction_account_id'],
-        ['profileId', 'transaction_profile_idy'],
+        ['profileId', 'transaction_profile_id'],
         ['organisationId', 'transaction_organisation_id'],
         ['partnerProfileId', 'transaction_partner_profile_id'],
         ['partnerOrganisationId', 'transaction_partner_organisation_id'],
@@ -162,8 +162,6 @@ class MollieService
     public function pay(float $amount, float $applicationFeePercent,  string $description, array $metadata)
     {
 
-        $profileId = "pfl_UJUKpSkEFT";
-
         $applicationFeeAmount = 0;
         if ($applicationFeePercent > 0) {
             $applicationFeeAmount = strval(number_format((($amount / 100) * $applicationFeePercent), 2, '.', ''));
@@ -171,7 +169,7 @@ class MollieService
 
         $payment = [
             "profileId" => $this->profileId,
-            "testmode" => true,
+            "testmode" => $this->testMode ? true : false,
             "amount" => [
                 "currency" => "EUR",
                 "value" => strval(number_format($amount, 2, '.', ''))

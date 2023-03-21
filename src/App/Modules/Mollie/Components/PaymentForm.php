@@ -4,6 +4,7 @@
 
     <input type="number" id="transaction_amount" name="transaction_amount" placeholder="Amount*" value="0.99" step="0.01" required><br><br>
     <input type="text" id="transaction_decription" name="transaction_decription" placeholder="Description*" value="Payment Test" required><br><br>
+    <input type="text" id="transaction_profile_id" name="transaction_profile_id" placeholder="Profile ID*" value="<?php echo $app->mollie->profileId ?>" required><br><br>
     <input type="text" id="transaction_api_key" name="transaction_api_key" placeholder="API Key*" value="<?php echo $app->mollie->apiKey ?>" required><br><br>
     <input type="text" id="transaction_access_key" name="transaction_access_key" placeholder="Access Key*" value="<?php echo $app->mollie->accessKey ?>" required><br><br>
     <input type="text" id="transaction_webhook_url" name="transaction_webhook_url" value="<?php echo $app->mollie->webhookUrl ?>" placeholder="Webhook URL"><br><br>
