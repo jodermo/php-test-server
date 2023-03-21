@@ -26,7 +26,7 @@
 
 - Mollie Payment: [src/App/Modules/Mollie](./src/App/Modules/Mollie/) 
 
-- Encyptet Chat: [src/App/Modules/Mollie](./src/App/Modules/Mollie/) 
+- Encyptet Chat: [src/App/Modules/Chat](./src/App/Modules/Chat/) 
 
 <br>
 <br>
