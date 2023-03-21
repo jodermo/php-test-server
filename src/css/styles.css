@@ -65,6 +65,9 @@ h3 {
 .checkbox-container label {
     color: #00ffdd;
     flex: 1;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
 }
 
 .checkbox-container input {

@@ -9,10 +9,12 @@
 
         if ($_GET["submit"]) {
             include(__DIR__ . '/Components/PaymentSubmit.php');
+        } else if ($_GET["success"]) {
+            include(__DIR__ . '/Components/PaymentSuccess.php');
         } else {
             include(__DIR__ . '/Components/PaymentForm.php');
         }
-        
+
         ?>
     </div>
 

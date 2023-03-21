@@ -1,6 +1,4 @@
-<h2>Payment Created</h2>
-<?php $app->mollie->paymentUrl ? include(__DIR__ . '/PaymentLink.php') : null ?>
-<?php !$app->mollie->paymentUrl ? include(__DIR__ . '/PaymentError.php') : null ?>
+<h2>Payment Success</h2>
 <div class="php-output">
     <h3>Transaktion Data</h3>
     <table>
@@ -15,8 +13,8 @@
             </tr>
         </tbody>
     </table>
-    <?php echo $app->arrayToHtmlTable($app->mollie->request, 'Request Data'); ?>
     <?php echo $app->arrayToHtmlTable($app->mollie->response, 'Response Data'); ?>
+    <?php include(__DIR__ . '/PaymentError.php'); ?>
 </div>
 <form method="post" action="/?page=mollie">
     <input class="button" type="submit" value="New Transaction">
