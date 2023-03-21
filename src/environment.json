@@ -1,0 +1,10 @@
+{
+    "domain" : "https://php-test.dont-use.com/",
+    "email":"php-test-app@petzka.com",
+    "title":"PHP Test",
+    "description":"test your php application",
+    "keywords":"PHP, test",
+    "author":"Moritz Petzka",
+    "redirectUrl":"https://php-test.dont-use.com/?sucess=1",
+    "webhookUrl":"https://php-test.dont-use.com/"
+}

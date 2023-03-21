@@ -29,4 +29,3 @@ new-package.json
 
 /src/csv/*.csv
 /src/vendor
-*environment.json

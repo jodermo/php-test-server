@@ -15,19 +15,21 @@ Simple copy all Content from [/src/](./src/) to your server Apache server.
 ##### Example URL: [https://php-test.dont-use.com/](https://php-test.dont-use.com/)
 
 
-##### Includes example code for  HTML, CSS and JavaScript, PHP Class and Mollie Payment:
+##### Includes example code for HTML, CSS and JavaScript
+##### + PHP class for Mollie payment
+##### + PHP class for end to end encrypted chat
 
+- HTML/PHP index file: [src/index.php](./src/index.php) 
 
-- HTML index file: [src/index.php](./src/index.php) 
+- CSS Styles: [src/css/styles.css](./src/css/styles.css) 
 
-- CSS file: [src/css/styles.css](./src/css/styles.css) 
+- JavaScript Code [src/js/app.js](./src/js/app.js) 
 
-- JavaScript file [src/js/app.js](./src/js/app.js) 
+- Global PHP App Class: [src/App/App.php](./src/PHPTest/App.php) 
 
-- Global PHP App Class: [src/PHPTest/App.php](./src/PHPTest/App.php) 
+- Mollie Payment: [src/App/Modules/Mollie](./src/App/Modules/Mollie/) 
 
-- Mollie Payment: [src/PHPTest/Service/PayToMollie.php](./src/PHPTest/Service/PayToMollie.php) 
-
+- Encyptet Chat: [src/App/Modules/Mollie](./src/App/Modules/Mollie/) 
 
 <br>
 <br>
@@ -36,36 +38,22 @@ Simple copy all Content from [/src/](./src/) to your server Apache server.
 
 <br>
 
-## First create the `src/environment.json` file with following code and change needed parameters:
+## First edit the environement JSON file `src/environment.json`
 
 Example Code:
 ```
 
  /** for live: change the attribute for "domain" to your domain from your live server */
 {
-    "domain" : "http://localhost:8080",
-    "email":"<email address for system mails>",
-
+    "domain" : "https://php-test.dont-use.com/",
+    "email":"php-test-app@petzka.com",
     "title":"PHP Test",
     "description":"test your php application",
     "keywords":"PHP, test",
     "author":"Moritz Petzka",
-
-    "mollieApiKey":"test_XXX",
-    "mollieAccessKey":"access_XXX",
-
-    "mollieAccountId":"XXX",
-    "mollieProfileId":"pfl_XXX",
-    "mollieOrganisationId":"org_XXX",
-
-    "molliePartnerProfileId":"pfl_XXX",
-    "molliePartnerOrganisationId":"org_XXX",
-
-    "mollieRedirectUrl":"https://<your server uri>/?sucess=1",
-    "mollieWebhookUrl":"https://<your server uri>/"
+    "redirectUrl":"https://php-test.dont-use.com/?sucess=1",
+    "webhookUrl":"https://php-test.dont-use.com/"
 }
-
-
 ```
 
 <br>
