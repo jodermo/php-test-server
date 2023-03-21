@@ -210,7 +210,7 @@ class MollieService
         try {
             $payment = $this->mollie->payments->create($payment);
             $this->response = $payment;
-            $this->transactionId = $this->response->id ;
+            $this->transactionId = $this->response->id;
 
             $this->paymentUrl = $payment->getCheckoutUrl();
             $this->saveParams();
@@ -236,5 +236,15 @@ class MollieService
     public function open_window($url)
     {
         echo '<script type="text/javascript">window.open("' . $url . '");</script>';
+    }
+
+
+    public function checkWebHook()
+    {
+        $this->transactionId = $this->app->postData['id'] ? $this->app->postData['id'] : $this->transactionId;
+        if ($this->transactionId) {
+            $this->response =  $this->getTransactionById($this->transactionId);
+            $this->app->adminMail("Mollie API - checkWebHook on " . $this->app->getConfig("domain"),  $this->response);
+        }
     }
 }

@@ -11,7 +11,9 @@
             include(__DIR__ . '/Components/PaymentSubmit.php');
         } else if ($_GET["success"]) {
             include(__DIR__ . '/Components/PaymentSuccess.php');
-        } else {
+        } else if ($_GET["webhook"]) {
+            $app->mollie->checkWebHook();
+        }else {
             include(__DIR__ . '/Components/PaymentForm.php');
         }
         include(__DIR__ . '/Components/MollieInfo.php');
