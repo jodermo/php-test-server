@@ -516,8 +516,8 @@ button,
     box-sizing: border-box;
     background: rgba(0, 0, 0, .5);
     pointer-events: all;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 
