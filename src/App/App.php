@@ -123,9 +123,13 @@ class App
         return $redirectUrl;
     }
 
-    public function setCookie(string $storageName, string $value = null)
+    public function setCookie(string $storageName, $value = null, bool $parseArray = false)
     {
+
         if ($value != null && $storageName != null) {
+            if ($parseArray) {
+                $value = json_encode($value);
+            }
             try {
                 setcookie($storageName,  $value, $this->cookieOptions);
             } catch (\Exception $e) {
@@ -137,13 +141,15 @@ class App
         return false;
     }
 
-    public function getCookie(string $storageName, bool $configAttributeAsFallback = false, string $configAttribute = null)
+    public function getCookie(string $storageName, bool $configAttributeAsFallback = false, string $configAttribute = null, bool $parseArray = false)
     {
         $configAttribute = $configAttribute ? $configAttribute : $storageName;
-
         $configValue = $this->getConfig($configAttribute);
-
-        return $_COOKIE[$storageName] ? $_COOKIE[$storageName] : $configValue;
+        $value = $_COOKIE[$storageName] ? $_COOKIE[$storageName] : $configValue;
+        if ($value  && $parseArray) {
+            $value  = json_decode($value);
+        }
+        return  $value;
     }
 
 
@@ -182,6 +188,22 @@ class App
         } else {
             $dataString = $arrayData ? print_r($arrayData, true) : 'No Data';
             $html .= $dataString;
+        }
+        return $html;
+    }
+
+
+    public function arrayToHtmlCheckboxes($arrayData, string $name, string $label = null, bool $labelAsH3 = null)
+    {
+        $html = $labelAsH3 && $label != null ? '<h3>' . $label . '</h3>'  : '';
+        if (is_array($arrayData) || is_object($arrayData)) {
+            // start table
+            $html .= '<fieldset class="horizontal-flex flex-wrap flex-gap">';
+            $html .= !$labelAsH3 && $label != null ? '<legend>' . $label . '</legend>'  : '';
+            foreach ($arrayData as $key => $value) {
+                $html .= '<div class="flex-item checkbox-container"><input  type="checkbox" name="' . $name . '[]" value="' . $value . '"><label>' . $value . '</label></div>';
+            }
+            $html .= '</fieldset>';
         }
         return $html;
     }

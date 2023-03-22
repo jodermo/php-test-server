@@ -11,10 +11,14 @@
             include(__DIR__ . '/Components/PaymentSubmit.php');
         } else if ($_GET["success"]) {
             include(__DIR__ . '/Components/PaymentSuccess.php');
-        } else if ($_GET["webhook"]) {
+        } else if ($_GET["pay"]) {
+            include(__DIR__ . '/Components/PaymentForm.php');
+        }  else if ($_GET["connect"]) {
+            include(__DIR__ . '/Components/MollieConnect.php');
+        }else if ($_GET["webhook"]) {
             $app->mollie->checkWebHook();
         }else {
-            include(__DIR__ . '/Components/PaymentForm.php');
+            include(__DIR__ . '/Components/ConnectForm.php');
         }
         include(__DIR__ . '/Components/MollieInfo.php');
         ?>

@@ -5,6 +5,7 @@
     "description":"test your php application",
     "keywords":"PHP, test",
     "author":"Moritz Petzka",
+    "responseUrl":"https://php-test.dont-use.com/?page=mollie&response=1",
     "redirectUrl":"https://php-test.dont-use.com/?page=mollie&success=1",
     "webhookUrl":"https://php-test.dont-use.com/?page=mollie&webhook=1"
 }
